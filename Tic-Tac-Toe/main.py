@@ -31,7 +31,7 @@ def check_for_win(board, element):
 def tic_tac_toe():
     print_board(the_board)
 
-    for i in range(10):
+    for i in range(5):
         # while loop runs until legal position is given
         while True:
             x_index = int(input("Enter X. Positions start from 1,2,...9. "))
@@ -48,6 +48,11 @@ def tic_tac_toe():
             print("\n\n.....X wins.....\n\n")
             return
 
+        # check for the draw
+        if i == 4:
+            print("\n\n.....Match Draw.....\n\n")
+            return
+
         # while loop runs until legal position is given
         while True:
             y_index = int(input("Enter Y. Positions start from 1,2,...9. "))
@@ -62,11 +67,6 @@ def tic_tac_toe():
         # check for Y's win
         if check_for_win(the_board, "Y"):
             print("\n\n.....Y wins.....\n\n")
-            return
-
-        # check for the draw
-        if i == 9:
-            print("\n\n.....Match Draw.....\n\n")
             return
 
 
